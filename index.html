@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>龙族 · 答题</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- ========== 首页 ========== -->
+    <section id="home-view" class="view active">
+      <div class="home-content" id="home-content">
+        <div class="home-ornament"></div>
+        <h1 class="home-title">Extraction Evaluation Exam</h1>
+        <div class="home-divider">
+          <span class="divider-line"></span>
+          <span class="divider-text">DRAGON RAJA</span>
+          <span class="divider-line"></span>
+        </div>
+        <p class="home-quote">"凡王之血，必以剑终"</p>
+        <p class="home-subtitle">血统评定考试</p>
+        <button class="btn-primary" id="start-btn">开始答题</button>
+        <p class="home-tips">共 19 题 · 单选 15 题 · 多选 3 题 · 主观 1 题</p>
+        <p class="home-tips">满分 100 分（客观题 60 分 + 主观题 40 分）</p>
+      </div>
+    </section>
+
+    <!-- ========== 答题页 ========== -->
+    <section id="quiz-view" class="view">
+      <header class="quiz-header">
+        <button class="icon-btn" id="quiz-back-btn" aria-label="返回首页">&#8592;</button>
+        <span class="question-counter" id="question-counter">第 1 / 24 题</span>
+        <span class="header-spacer"></span>
+      </header>
+      <main class="quiz-main" id="quiz-content">
+        <!-- 题目由 JS 动态渲染 -->
+      </main>
+      <footer class="quiz-footer">
+        <div class="progress-dots" id="progress-dots"></div>
+        <div class="nav-buttons">
+          <button class="btn-secondary" id="prev-btn">上一题</button>
+          <button class="btn-primary" id="next-btn">下一题</button>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ========== 结果页 ========== -->
+    <section id="result-view" class="view">
+      <div class="result-content">
+        <div class="result-header">
+          <h2 class="result-title">答题完成</h2>
+          <div class="home-ornament small"></div>
+          <div class="score-display">
+            <span class="score-number" id="score-number">0</span>
+            <span class="score-total">/ <span id="total-score">60</span></span>
+          </div>
+          <p class="score-comment" id="score-comment"></p>
+        </div>
+
+        <div class="result-section">
+          <h3 class="section-title">得分明细</h3>
+          <div id="score-breakdown"></div>
+        </div>
+
+        <div class="result-section">
+          <button class="btn-primary btn-wrong-review" id="wrong-review-btn">回顾错题</button>
+        </div>
+
+        <div class="result-section">
+          <h3 class="section-title">主观题</h3>
+          <div id="subjective-content"></div>
+        </div>
+
+        <div class="screenshot-tip">
+          <p class="tip-title">请截图保存你的成绩</p>
+          <p class="tip-text">本网页无法直接截图，请使用手机自带截屏功能：</p>
+          <p class="tip-text">&#8226; 苹果手机：同时按 电源键 + 音量上键</p>
+          <p class="tip-text">&#8226; 安卓手机：同时按 电源键 + 音量下键</p>
+          <p class="tip-text">&#8226; 或长按屏幕，选择"截屏"（部分手机支持）</p>
+        </div>
+
+        <button class="btn-primary" id="restart-btn">再答一次</button>
+      </div>
+    </section>
+
+    <!-- ========== 错题回顾页 ========== -->
+    <section id="wrong-view" class="view">
+      <header class="quiz-header">
+        <button class="icon-btn" id="wrong-back-btn" aria-label="返回结果页">&#8592;</button>
+        <span class="question-counter">错题回顾</span>
+        <span class="header-spacer"></span>
+      </header>
+      <main class="quiz-main" id="wrong-content">
+        <!-- 错题由 JS 动态渲染 -->
+      </main>
+    </section>
+
+  </div>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
